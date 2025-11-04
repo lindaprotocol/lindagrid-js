@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const target = path.resolve(__dirname, '..', 'test', 'setup', 'TronGrid.js');
+const target = path.resolve(__dirname, '..', 'test', 'setup', 'LindaGrid.js');
 
 try {
     fs.unlinkSync(target);

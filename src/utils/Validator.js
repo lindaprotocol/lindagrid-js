@@ -1,11 +1,11 @@
-let tronWeb;
+let lindaWeb;
 let utils;
 
 export default class Validator {
 
-    constructor(tronGrid) {
-        tronWeb = tronGrid.tronWeb;
-        utils = tronWeb.utils;
+    constructor(lindaGrid) {
+        lindaWeb = lindaGrid.lindaWeb;
+        utils = lindaWeb.utils;
     }
 
     validatePageData(data) {
@@ -21,7 +21,7 @@ export default class Validator {
     }
 
     validateAddress(address) {
-        if (!tronWeb.isAddress(address))
+        if (!lindaWeb.isAddress(address))
             throw new Error('Invalid address provided.');
     }
 

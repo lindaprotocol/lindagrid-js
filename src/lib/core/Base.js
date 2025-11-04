@@ -1,21 +1,21 @@
-import TronGrid from '../../index';
+import LindaGrid from '../../index';
 import APIClient from '../apis/APIClient';
 import validator from '../../utils/Validator';
 import injectpromise from 'injectpromise';
 
 class Base {
 
-    constructor(tronGrid) {
-        if (!tronGrid || !(tronGrid instanceof TronGrid))
-            throw new Error('Expected instance of TronGrid');
+    constructor(lindaGrid) {
+        if (!lindaGrid || !(lindaGrid instanceof LindaGrid))
+            throw new Error('Expected instance of LindaGrid');
 
-        this.tronGrid = tronGrid;
-        this.tronWeb = tronGrid.tronWeb;
+        this.lindaGrid = lindaGrid;
+        this.lindaWeb = lindaGrid.lindaWeb;
         this.injectPromise = injectpromise(this);
-        this.apiNode = this.tronWeb.eventServer;
-        this.utils = this.tronWeb.utils;
-        this.validator = new validator(tronGrid);
-        this.APIClient = new APIClient(tronGrid);
+        this.apiNode = this.lindaWeb.eventServer;
+        this.utils = this.lindaWeb.utils;
+        this.validator = new validator(lindaGrid);
+        this.APIClient = new APIClient(lindaGrid);
     }
 
 }

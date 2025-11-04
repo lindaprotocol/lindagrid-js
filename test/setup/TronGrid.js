@@ -1,1 +1,1 @@
-module.exports = require('../../dist/trongrid.node');
+module.exports = require('../../dist/lindagrid.node');

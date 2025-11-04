@@ -3,7 +3,7 @@ import Asset from 'lib/core/Asset';
 import Block from 'lib/core/Block';
 import Contract from 'lib/core/Contract';
 import Transaction from 'lib/core/Transaction';
-import TronWebPlugin from 'lib/plugins/TronWebPlugin';
+import LindaWebPlugin from 'lib/plugins/LindaWebPlugin';
 import APIClient from 'lib/apis/APIClient';
 import validator from 'utils/Validator';
 import injectpromise from 'injectpromise';
@@ -11,14 +11,14 @@ import injectpromise from 'injectpromise';
 let utils;
 let experimental;
 
-export default class TronGrid {
+export default class LindaGrid {
 
-    constructor(tronWeb = false) {
-        if (!tronWeb)
-            throw new Error('Expected instance of TronWeb');
+    constructor(lindaWeb = false) {
+        if (!lindaWeb)
+            throw new Error('Expected instance of LindaWeb');
 
-        this.tronWeb = tronWeb;
-        this.utils = utils = tronWeb.utils
+        this.lindaWeb = lindaWeb;
+        this.utils = utils = lindaWeb.utils
         this.account = new Account(this);
         this.asset = new Asset(this);
         this.block = new Block(this);
@@ -39,13 +39,13 @@ export default class TronGrid {
         if (options.experimental) {
             experimental = options.experimental
         }
-        const tronWebPlugin = new TronWebPlugin(this);
-        tronWebPlugin.setExperimental(options.experimental);
+        const lindaWebPlugin = new LindaWebPlugin(this);
+        lindaWebPlugin.setExperimental(options.experimental);
         return {
             requires: '^2.2.4',
             components: {
-                trx: {
-                    getTransactionsRelated: tronWebPlugin.getTransactions
+                lind: {
+                    getTransactionsRelated: lindaWebPlugin.getTransactions
                 }
             }
         }

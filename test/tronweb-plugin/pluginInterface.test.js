@@ -1,18 +1,18 @@
-const TronWeb = require('../setup/TronWeb');
+const LindaWeb = require('../setup/LindaWeb');
 const {assert} = require('../helpers/includes');
-const TronGrid = require('../setup/TronGrid');
+const LindaGrid = require('../setup/LindaGrid');
 const {LOCAL} = require('../helpers/config');
 
 describe('#pluginInterface for walletextension plugin', function () {
 
-    let tronWeb;
+    let lindaWeb;
 
     before(async function () {
-        tronWeb = new TronWeb({
+        lindaWeb = new LindaWeb({
             fullHost: LOCAL.HOST
         });
 
-        // tronWeb.plugin.register(TronGrid, {experimental: 'RVg3e7ma'});
+        // lindaWeb.plugin.register(LindaGrid, {experimental: 'RVg3e7ma'});
 
     });
 
@@ -22,14 +22,14 @@ describe('#pluginInterface for walletextension plugin', function () {
 
         it('should substitute getTransactionsToAddress', async function () {
 
-            const res = await tronWeb.trx.getTransactionsToAddress(address, 5);
+            const res = await lindaWeb.lind.getTransactionsToAddress(address, 5);
             assert.equal(res.length, 5);
             assert.isNotNull(res[0].txID);
         })
 
         it('should substitute getTransactionsFromAddress', async function () {
 
-            const res = await tronWeb.trx.getTransactionsFromAddress(address, 5);
+            const res = await lindaWeb.lind.getTransactionsFromAddress(address, 5);
             assert.equal(res.length, 5);
             assert.isNotNull(res[0].txID);
         })

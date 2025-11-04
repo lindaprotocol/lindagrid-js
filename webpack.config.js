@@ -59,7 +59,7 @@ module.exports = [
         ...baseConfig,
         output: {
             path: path.resolve(__dirname, 'dist'),
-            filename: 'trongrid.node.js',
+            filename: 'lindagrid.node.js',
             libraryTarget: 'commonjs2',
             libraryExport: 'default'
         },
@@ -92,8 +92,8 @@ module.exports = [
         ...baseConfig,
         output: {
             path: path.resolve(__dirname, 'dist'),
-            filename: 'trongrid.js',
-            library: 'trongrid',
+            filename: 'lindagrid.js',
+            library: 'lindagrid',
             libraryTarget: 'umd',
             libraryExport: 'default',
             umdNamedDefine: true

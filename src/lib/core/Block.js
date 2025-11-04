@@ -4,8 +4,8 @@ let utils;
 
 export default class Block extends Base {
 
-    constructor(tronGrid) {
-        super(tronGrid);
+    constructor(lindaGrid) {
+        super(lindaGrid);
         utils = this.utils;
     }
 

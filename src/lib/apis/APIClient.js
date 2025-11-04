@@ -1,15 +1,15 @@
 
 export default class APIClient {
 
-    constructor(tronGrid) {
-        this.tronGrid = tronGrid;
-        this.apiNode = tronGrid.tronWeb.eventServer;
+    constructor(lindaGrid) {
+        this.lindaGrid = lindaGrid;
+        this.apiNode = lindaGrid.lindaWeb.eventServer;
     }
 
     _httpClient(path, options, callback, method = 'get') {
 
-        if (!options.experimental && this.tronGrid.experimental) {
-            options.experimental = this.tronGrid.experimental;
+        if (!options.experimental && this.lindaGrid.experimental) {
+            options.experimental = this.lindaGrid.experimental;
         }
 
         this.apiNode.request(path, options, method).then(response => {

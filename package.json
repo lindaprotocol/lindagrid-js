@@ -1,8 +1,8 @@
 {
-    "name": "trongrid",
+    "name": "lindagrid",
     "version": "1.2.6",
     "description": "JavaScript SDK that encapsulates the TG3 HTTP API",
-    "main": "dist/trongrid.node.js",
+    "main": "dist/lindagrid.node.js",
     "scripts": {
         "prepare": "npm run build",
         "build": "npm run clean && webpack --config webpack.config.js --progress --colors",
@@ -29,7 +29,7 @@
         "chai": "^4.2.0",
         "injectpromise":" ^1.0.0",
         "mocha": "^5.2.0",
-        "tronweb": "^2.3.4",
+        "lindaweb": "^2.3.4",
         "webpack": "^4.17.2",
         "webpack-cli": "^3.1.0",
         "webpack-node-externals": "^1.7.2"
@@ -40,11 +40,11 @@
     },
     "contributors": [
         {
-            "name": "TRON",
-            "url": "https://github.com/Tron-US"
+            "name": "LINDA",
+            "url": "https://github.com/lindaprotocol"
         }
     ],
-    "homepage": "https://github.com/TRON-US/trongrid-js",
+    "homepage": "https://github.com/lindaprotocol/lindagrid-js",
     "license": "MIT",
-    "repository": "https://github.com/TRON-US/trongrid-js.git"
+    "repository": "https://github.com/lindaprotocol/lindagrid-js.git"
 }

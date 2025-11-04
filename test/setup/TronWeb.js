@@ -1,3 +1,3 @@
-module.exports = require('../../node_modules/tronweb/dist/TronWeb.node');
-// module.exports = require('../../../tron-web/dist/TronWeb.node');
+module.exports = require('../../node_modules/lindaweb/dist/LindaWeb.node');
+// module.exports = require('../../../linda-web/dist/LindaWeb.node');
 

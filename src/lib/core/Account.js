@@ -4,8 +4,8 @@ let utils;
 
 export default class Account extends Base {
 
-    constructor(tronGrid) {
-        super(tronGrid);
+    constructor(lindaGrid) {
+        super(lindaGrid);
         utils = this.utils;
     }
 
@@ -29,7 +29,7 @@ export default class Account extends Base {
         this.validator.validateAddress(address);
 
         if (address.length !== 34)
-            address = this.tronWeb.address.fromHex(address);
+            address = this.lindaWeb.address.fromHex(address);
 
         return this.APIClient.get(`v1/accounts/${address}`, options, callback);
     }
@@ -53,33 +53,33 @@ export default class Account extends Base {
         this.validator.validateAddress(address);
 
         if (address.length !== 34)
-            address = this.tronWeb.address.fromHex(address);
+            address = this.lindaWeb.address.fromHex(address);
 
         return this.APIClient.get(`v1/accounts/${address}/transactions`, options, callback);
     }
 
     /**
-     * @name TG3 API: /v1/accounts/:address/transactions/trc20
+     * @name TG3 API: /v1/accounts/:address/transactions/lrc20
      * @param address
      * @param options
      * @param callback
      * @returns list of transactions
      */
-    getTrc20Transactions(address, options = {}, callback = false) {
+    getLrc20Transactions(address, options = {}, callback = false) {
         if (utils.isFunction(options)) {
             callback = options;
             options = {};
         }
 
         if (!callback)
-            return this.injectPromise(this.getTrc20Transactions, address, options);
+            return this.injectPromise(this.getLrc20Transactions, address, options);
 
         this.validator.validateAddress(address);
 
         if (address.length !== 34)
-            address = this.tronWeb.address.fromHex(address);
+            address = this.lindaWeb.address.fromHex(address);
 
-        return this.APIClient.get(`v1/accounts/${address}/transactions/trc20`, options, callback);
+        return this.APIClient.get(`v1/accounts/${address}/transactions/lrc20`, options, callback);
     }
 
 }

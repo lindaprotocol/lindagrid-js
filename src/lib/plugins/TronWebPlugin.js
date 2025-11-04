@@ -3,19 +3,19 @@ import Base from '../core/Base';
 let utils;
 let account;
 
-export default class TronWebPlugin extends Base {
+export default class LindaWebPlugin extends Base {
 
-    constructor(tronGrid) {
-        super(tronGrid);
+    constructor(lindaGrid) {
+        super(lindaGrid);
         utils = this.utils;
-        account = this.tronGrid.account;
+        account = this.lindaGrid.account;
     }
 
     setExperimental(experimental) {
-        this.tronGrid.setExperimental(experimental);
+        this.lindaGrid.setExperimental(experimental);
     }
 
-    async getTransactions(address = this.tronWeb.defaultAddress.hex, direction = 'all', limit = 20, offset = 0, callback = false) {
+    async getTransactions(address = this.lindaWeb.defaultAddress.hex, direction = 'all', limit = 20, offset = 0, callback = false) {
 
         if (utils.isFunction(offset)) {
             callback = offset;
@@ -33,7 +33,7 @@ export default class TronWebPlugin extends Base {
 
         if (utils.isFunction(address)) {
             callback = address;
-            address = this.tronWeb.defaultAddress.hex;
+            address = this.lindaWeb.defaultAddress.hex;
         }
 
         const options = {

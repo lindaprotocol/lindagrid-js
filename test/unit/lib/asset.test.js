@@ -1,14 +1,14 @@
-const {assert, tronGridBuilder, net} = require('../../helpers/includes')
+const {assert, lindaGridBuilder, net} = require('../../helpers/includes')
 
 
 describe('#asset functional unit test', function () {
 
-    let tronGrid;
+    let lindaGrid;
 
     before(async function () {
         this.timeout(10000);
-        tronGrid = tronGridBuilder.createInstance(net);
-        tronGrid.setExperimental('RVg3e7ma');
+        lindaGrid = lindaGridBuilder.createInstance(net);
+        lindaGrid.setExperimental('RVg3e7ma');
     });
 
     after(async function () {
@@ -32,9 +32,9 @@ describe('#asset functional unit test', function () {
 
         it('should get asset by id or address', async function () {
             for (let identifier of identifiers) {
-                const res = await tronGrid.asset.get(identifier, {});
+                const res = await lindaGrid.asset.get(identifier, {});
                 for (let item of res.data) {
-                    assert.isTrue(item.id === identifier || tronGrid.tronWeb.address.fromHex(item.owner_address) === tronGrid.tronWeb.address.fromHex(identifier));
+                    assert.isTrue(item.id === identifier || lindaGrid.lindaWeb.address.fromHex(item.owner_address) === lindaGrid.lindaWeb.address.fromHex(identifier));
                 }
             }
         });
@@ -53,7 +53,7 @@ describe('#asset functional unit test', function () {
 
         it('should get asset list by name', async function () {
             for (let name of names) {
-                const res = await tronGrid.asset.getList(name, {});
+                const res = await lindaGrid.asset.getList(name, {});
                 for (let item of res.data) {
                     assert.equal(item.name, name);
                 }
@@ -64,7 +64,7 @@ describe('#asset functional unit test', function () {
     describe('#get the a list of assets', function () {
 
         it('should get assets list', async function () {
-            const res = await tronGrid.asset.getAll({limit: 1, order_by:'id,asc'});
+            const res = await lindaGrid.asset.getAll({limit: 1, order_by:'id,asc'});
             assert.equal(res.data[0].name, 'SEED');
         });
 

@@ -1,14 +1,14 @@
-const {assert, tronGridBuilder, net} = require('../../helpers/includes')
+const {assert, lindaGridBuilder, net} = require('../../helpers/includes')
 
 
 describe('#account functional unit test', function () {
 
-    let tronGrid;
+    let lindaGrid;
 
     before(async function () {
         this.timeout(10000);
-        tronGrid = tronGridBuilder.createInstance(net);
-        tronGrid.setExperimental('RVg3e7ma');
+        lindaGrid = lindaGridBuilder.createInstance(net);
+        lindaGrid.setExperimental('RVg3e7ma');
     });
 
     after(async function () {
@@ -25,7 +25,7 @@ describe('#account functional unit test', function () {
 
         it('should get account by address', async function () {
             for (let address of addresses) {
-                const res = await tronGrid.account.get(address, {});
+                const res = await lindaGrid.account.get(address, {});
                 for (let account of res.data) {
                     assert.equal(account.address, address);
                 }
@@ -43,7 +43,7 @@ describe('#account functional unit test', function () {
         it('should get transaction by address', async function () {
 
             for (let address of addresses) {
-                const res = await tronGrid.account.getTransactions(address, {});
+                const res = await lindaGrid.account.getTransactions(address, {});
                 for (let tx of res.data) {
                     for (let contract of tx.raw_data.contract) {
                         const ownerAddress = contract.parameter.value.owner_address;
@@ -55,7 +55,7 @@ describe('#account functional unit test', function () {
         });
     });
 
-    describe('#get trc20 transaction by account address', function () {
+    describe('#get lrc20 transaction by account address', function () {
         this.timeout(10000);
 
         const addresses = [
@@ -64,10 +64,10 @@ describe('#account functional unit test', function () {
             'TJQ1vgSGsUuoDQUW5fZVM4mRYqyDXSecif'
         ];
 
-        it('should get trc20 transaction by address', async function () {
+        it('should get lrc20 transaction by address', async function () {
 
             for (let address of addresses) {
-                const res = await tronGrid.account.getTrc20Transactions(address, {});
+                const res = await lindaGrid.account.getLrc20Transactions(address, {});
                 for (let tx of res.data) {
                     assert.isTrue(tx.from === address || tx.to === address);
                     assert.notEqual(tx.value, '');

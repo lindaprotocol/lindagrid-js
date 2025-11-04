@@ -4,8 +4,8 @@ let utils;
 
 export default class Contract extends Base {
 
-    constructor(tronGrid) {
-        super(tronGrid);
+    constructor(lindaGrid) {
+        super(lindaGrid);
         utils = this.utils;
     }
 
@@ -30,7 +30,7 @@ export default class Contract extends Base {
 
         this.validator.validateOptions(options);
 
-        contractAddress = this.tronWeb.address.fromHex(contractAddress);
+        contractAddress = this.lindaWeb.address.fromHex(contractAddress);
 
         return this.APIClient.get(`v1/contracts/${contractAddress}/events`, options, callback);
     }
@@ -40,9 +40,9 @@ export default class Contract extends Base {
      * @param contractAddress
      * @param options(onlyConfirmed, onlyUnconfirmed, previousFingerprint, orderBy, limit)
      * @param callback
-     * @returns list of trc20 tokens
+     * @returns list of lrc20 tokens
      */
-    getTrc20Tokens(contractAddress, options = {}, callback = false) {
+    getLrc20Tokens(contractAddress, options = {}, callback = false) {
 
         if (utils.isFunction(options)) {
             callback = options;
@@ -50,11 +50,11 @@ export default class Contract extends Base {
         }
 
         if(!callback)
-            return this.injectPromise(this.getTrc20Tokens, contractAddress, options);
+            return this.injectPromise(this.getLrc20Tokens, contractAddress, options);
 
         this.validator.validateAddress(contractAddress);
 
-        contractAddress = this.tronWeb.address.fromHex(contractAddress);
+        contractAddress = this.lindaWeb.address.fromHex(contractAddress);
 
         return this.APIClient.get(`v1/contracts/${contractAddress}/tokens`, options, callback);
     }
@@ -80,7 +80,7 @@ export default class Contract extends Base {
                     minBlockTimestamp: since,
                     orderBy: 'timestamp,desc',
                     // TODO:
-                    // add filters => eventron is already equipped for them
+                    // add filters => evenlinda is already equipped for them
                     // filters: options.filters
                 }, options)
 

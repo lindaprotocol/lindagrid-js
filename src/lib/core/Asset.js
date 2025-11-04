@@ -4,8 +4,8 @@ let utils;
 
 export default class Asset extends Base {
 
-    constructor(tronGrid) {
-        super(tronGrid);
+    constructor(lindaGrid) {
+        super(lindaGrid);
         utils = this.utils;
     }
 
@@ -26,8 +26,8 @@ export default class Asset extends Base {
         if (!callback)
             return this.injectPromise(this.get, identifier, options);
 
-        if (this.tronGrid.experimental)
-            options.experimental = this.tronGrid.experimental;
+        if (this.lindaGrid.experimental)
+            options.experimental = this.lindaGrid.experimental;
 
         this.APIClient.get(`v1/assets/${identifier}`, options, callback);
     }
