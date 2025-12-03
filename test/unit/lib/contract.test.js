@@ -19,7 +19,7 @@ describe('#contract functional unit test', function () {
         this.timeout(10000);
 
         it('should get events without filter', async function () {
-            let contractAddress = 'TZ7y9zuk1LMfp4JLFPrs1EcqXuqZukmBYG';
+            let contractAddress = 'LiNiR9qqwGUmugvrqGCSm6zTqLTXuA5mnG';
             const events = await lindaGrid.contract.getEvents(contractAddress, {only_data_and_fingerprint: true});
             for (let event of events) {
                 assert.equal(event.contract_address, contractAddress);
@@ -32,7 +32,7 @@ describe('#contract functional unit test', function () {
         this.timeout(10000);
 
         it('should get lrc20 tokens without filter', async function () {
-            let contractAddress = 'TR7NHqjeKQxGTCi8q8ZY4pL8otSzgjLj6t';
+            let contractAddress = 'LaN7YzfkFM5NYqLfQzu7pghm7K4xezNxiS';
             const tokens = await lindaGrid.contract.getLrc20Tokens(contractAddress, {only_data_and_fingerprint: true});
             assert.isArray(tokens)
             for (let token of tokens) {
@@ -113,9 +113,9 @@ describe('#contract functional unit test', function () {
                 only_data_and_fingerprint: true
             }, (err, res) => {
                 if(res) {
-                    assert.equal('41' + res.result._sender.slice(2), accounts.hex[0]);
+                    assert.equal('30' + res.result._sender.slice(2), accounts.hex[0]);
                     assert.equal(res.result._amount, 1000);
-                    assert.equal('41' + res.result._receiver.slice(2), accounts.hex[1]);
+                    assert.equal('30' + res.result._receiver.slice(2), accounts.hex[1]);
 
                     watchTest.stop();
                 }

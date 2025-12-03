@@ -22,12 +22,12 @@ describe('#asset functional unit test', function () {
             '1000001',
             '1000002',
             '1000018',
-            'TGzz8gjYiYRqpfmDwnLxfgPuLVNmpCswVp',
-            'TB16q6kpSEW2WqvTJ9ua7HAoP9ugQ2HdHZ',
-            'TV3NmH1enpu4X5Hur8Z16eCyNymTqKXQDP',
-            '41ceeac0188d24b5e91087602c60f324c2fb2a3840',
-            '41569852808611a64cd804cf6c242510c29830dcfb',
-            '414ae1ad9344d1e393a4d733e03b2ec48f3909002e'
+            'LSFjPqfeeUYwvJPkXegYRYmXduzjjyd3pN',
+            'LLFr6FgvNAd8cUYyt2F9s9YRgaXeFk6dm2',
+            'LeJ82Rwkim2AchvSRztarWabgQPRhPu5Hb',
+            '30ceeac0188d24b5e91087602c60f324c2fb2a3840',
+            '30569852808611a64cd804cf6c242510c29830dcfb',
+            '304ae1ad9344d1e393a4d733e03b2ec48f3909002e'
         ];
 
         it('should get asset by id or address', async function () {

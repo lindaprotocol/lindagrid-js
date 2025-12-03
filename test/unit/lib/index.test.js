@@ -39,7 +39,7 @@ describe('#next page test', function () {
         this.timeout(10000);
 
         const addresses = [
-            '4142232ff1bddd5f01c948c9a661e43308648cfeb2'
+            '3042232ff1bddd5f01c948c9a661e43308648cfeb2'
         ];
 
         it('should get transactions with pagination', async function () {
@@ -65,7 +65,7 @@ describe('#next page test', function () {
 
         it('should get events by contract address with pagination', async function () {
             for (let type of types) {
-                let contractAddress = 'TZ7y9zuk1LMfp4JLFPrs1EcqXuqZukmBYG';
+                let contractAddress = 'LiNiR9qqwGUmugvrqGCSm6zTqLTXuA5mnG';
                 let res = await lindaGrid.contract.getEvents(contractAddress);
                 let totalPage = 3;
                 let i = 1;
@@ -98,7 +98,7 @@ describe('#next page test', function () {
         });
 
         it('should throw it\'s the last page or missed fingerprint in the links error', async function () {
-            let res = await lindaGrid.account.getTransactions('4142232ff1bddd5f01c948c9a661e43308648cfeb2');
+            let res = await lindaGrid.account.getTransactions('3042232ff1bddd5f01c948c9a661e43308648cfeb2');
             delete res.meta.fingerprint;
             await assertThrow(
                 lindaGrid.nextPage(res.meta.links.next),
@@ -107,7 +107,7 @@ describe('#next page test', function () {
         });
 
         it('should throw it\'s the last page or missed fingerprint in the json error', async function () {
-            let res = await lindaGrid.account.getTransactions('4142232ff1bddd5f01c948c9a661e43308648cfeb2');
+            let res = await lindaGrid.account.getTransactions('3042232ff1bddd5f01c948c9a661e43308648cfeb2');
             delete res.meta.fingerprint;
             await assertThrow(
                 lindaGrid.nextPage(res),

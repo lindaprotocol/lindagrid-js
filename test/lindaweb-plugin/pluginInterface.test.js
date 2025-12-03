@@ -18,7 +18,7 @@ describe('#pluginInterface for walletextension plugin', function () {
 
     describe.skip('#get transaction from this', function () {
 
-        const address = '4142232ff1bddd5f01c948c9a661e43308648cfeb2';
+        const address = '3042232ff1bddd5f01c948c9a661e43308648cfeb2';
 
         it('should substitute getTransactionsToAddress', async function () {
 

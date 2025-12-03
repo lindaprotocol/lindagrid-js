@@ -20,7 +20,7 @@ describe('#account functional unit test', function () {
         this.timeout(10000);
 
         const addresses = [
-            '4142232ff1bddd5f01c948c9a661e43308648cfeb2'
+            '3042232ff1bddd5f01c948c9a661e43308648cfeb2'
         ];
 
         it('should get account by address', async function () {
@@ -37,7 +37,7 @@ describe('#account functional unit test', function () {
         this.timeout(10000);
 
         const addresses = [
-            '4142232ff1bddd5f01c948c9a661e43308648cfeb2'
+            '3042232ff1bddd5f01c948c9a661e43308648cfeb2'
         ];
 
         it('should get transaction by address', async function () {
@@ -59,9 +59,9 @@ describe('#account functional unit test', function () {
         this.timeout(10000);
 
         const addresses = [
-            'TJQ1vgSGsUuoDQUW5fZVM4mRYqyDXSecif',
-            'TM6vkdemCZaLFG6CirzgDVSkGpJKbzzbyS',
-            'TJQ1vgSGsUuoDQUW5fZVM4mRYqyDXSecif'
+            'LTemBqNNoR2uK372fXu56w93rGbBQC7UJF',
+            'LWMg1nas8VhSLtijJjLFyMpNaEvHaDCket',
+            'LTemBqNNoR2uK372fXu56w93rGbBQC7UJF'
         ];
 
         it('should get lrc20 transaction by address', async function () {

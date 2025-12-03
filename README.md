@@ -198,7 +198,7 @@ For example, `await lindaGrid.asset.getAll()` will return something like
             "lind_num": 22778,
             "url": "www.KEYS.crypto.org",
             "vote_score": 0,
-            "owner_address": "4149b3dad5ef9dbab6a059fc95159efcecd5db910e",
+            "owner_address": "3049b3dad5ef9dbab6a059fc95159efcecd5db910e",
             "start_time": 1553538720706,
             "end_time": 1553538960706
         },
@@ -253,7 +253,7 @@ const lindaGrid = new LindaGrid(lindaWeb);
 lindaGrid.setExperimental('your experimental key');
 
 async function getAccount() {
-    const address = 'TPL66VK2gCXNCD7EJg9pgJRfqcRazjhUZY';
+    const address = 'LYaqMeF8c8eUHqjktYVQSAoJ933YthjNA1';
 
     const options = {
         showAssets: true,
@@ -279,7 +279,7 @@ async function getAccount() {
 }
 
 async function getTransactions() {
-    const address = 'TPL66VK2gCXNCD7EJg9pgJRfqcRazjhUZY';
+    const address = 'LYaqMeF8c8eUHqjktYVQSAoJ933YthjNA1';
 
     const options = {
         onlyTo: true,
@@ -308,7 +308,7 @@ async function getTransactions() {
 }
 
 async function getAssets() {
-    const address = 'TXk39yyhzpfbqtU1BATUzpcfQ37L8Tc4Ht';
+    const address = 'LgznR8uovknhwX6Xm2o4kgzHhTjJ3h7UTM';
     const options = {};
 
     // awaiting
