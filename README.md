@@ -17,7 +17,7 @@ You can also ship LindaGridJS in a Chrome extension.
 
 ## Installation
 
-__[LindaGridJS - NPM Package](https://www.npmjs.com/package/lindagrid)__
+__[LindaGridJS - NPM Package](https://www.npmjs.com/package/@lindacoin/lindagrid)__
 
 #### NPM
 ```bash
