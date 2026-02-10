@@ -21,12 +21,12 @@ __[LindaGridJS - NPM Package](https://www.npmjs.com/package/@lindacoin/lindagrid
 
 #### NPM
 ```bash
-> npm install lindagrid
+> npm install @linacoin/lindagrid
 ```
 
 #### Yarn
 ```bash
-> yarn add lindagrid
+> yarn add @lindacoin/lindagrid
 ```
 
 ## Build Steps
@@ -222,7 +222,7 @@ As you can see, in the meta fields, there is the fingerprint you must pass to ne
 Install [LindaWeb](https://github.com/lindaprotocol/linda-web) if you don't have done it yet.
 
 ```bash
-npm install lindaweb
+npm install @lindacoin/lindaweb
 ```
 
 Initialize LindaWeb and create LindaGridJS instance
@@ -232,7 +232,7 @@ const LindaGrid = require('lindagrid');
 const LindaWeb = require('lindaweb');
 
 const lindaWeb = new LindaWeb({
-    fullHost: 'https://api.lindagrid.io'
+    fullHost: 'https://api.lindagrid.lindacoin.org'
 });
 
 const lindaGrid = new LindaGrid(lindaWeb);
@@ -246,7 +246,7 @@ const LindaGrid = require('lindagrid');
 const LindaWeb = require('lindaweb');
 
 const lindaWeb = new LindaWeb({
-    fullHost: 'https://api.lindagrid.io'
+    fullHost: 'https://api.lindagrid.lindacoin.org'
 });
 
 const lindaGrid = new LindaGrid(lindaWeb);
